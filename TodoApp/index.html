@@ -1,0 +1,37 @@
+<html ng-app="myTodoApp">
+
+    <head>
+        <title>Todo App</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+        <script src="app.js"></script>
+</head>
+
+
+<body>
+
+    <h1> Todo App </h1>
+    <div ng-controller="TodoAppCtrl as Ctrl">
+        <p> Add a Todo: </p>
+        <input type="text" ng-model="Ctrl.newTodo"></input>
+       <p> <button ng-click = "Ctrl.addNewTodo()">Add</button> </p>
+
+       <div>
+        <p> Your Todos: </p>
+        <button ng-hide="Ctrl.editMode" ng-click="Ctrl.triggerEditTodo()">Edit</button>
+        <button ng-show="Ctrl.editMode" ng-click="Ctrl.triggerEditTodo()">Done</button>
+        <ol>
+          <li ng-repeat="todo in Ctrl.todos">
+            <span ng-hide="Ctrl.editMode" ng-bind="todo"></span>
+            <input ng-model="todo" ng-show="Ctrl.editMode"  type = "text"></input>
+            <button ng-hide="Ctrl.editMode" ng-click = "Ctrl.deleteTodo($index)">Delete</button>
+
+          </li>
+        </ol>
+        
+       </div>
+
+    </div>
+
+  </body>
+
+</html

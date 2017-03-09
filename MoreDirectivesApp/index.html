@@ -1,0 +1,22 @@
+<html ng-app ="moreDirectivesApp">
+
+    <head>
+        <title>moreDirectivesApp</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+        <script src="app.js"></script>
+    </head>
+
+<body>
+
+    <h1>moreDirectivesApp</h1>
+
+    <div ng-controller="MoreDirectivesCtrl as Ctrl">
+        <div ng-repeat = "i in Ctrl.myList">
+
+           {{$index}} {{i.name}} {{i.age}}
+            <hr/>
+    </div>
+
+</body>
+
+</html>
